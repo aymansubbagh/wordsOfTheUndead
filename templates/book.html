@@ -1,0 +1,72 @@
+{% extends "base_template.html" %}
+  {% block search_words_of_the_undead %}
+    <a class="navbar-brand js-scroll-trigger" style="color:black;" href="{{ url_for('index') }}">Words of the undead</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  {% endblock %}
+  {% block search_user %}
+    <li class="nav-item"><a style="color:black;" class="nav-link js-scroll-trigger" href="{{ url_for('logout') }}">logout</a></li>
+  {% endblock %}
+  {% block body %}
+  <div class="row" style="padding-top:100px;">
+    <div class="col-12">
+      <div class="row">
+        <!--the book card section-->
+        <div class="col-2 d-inline" style="padding-left:40px;" >
+          <img src="https://covers.openlibrary.org/b/ISBN/{{ isbn }}--M.jpg" style="width:226px; height:376px" alt="Avatar">
+          <div class="card_container">
+            <h4><p style="word-wrap:break-word;"><b>{{ author }}</b></p></h4>
+            <p style="word-wrap:break-word;">{{ title }}</p>
+
+          </div>
+        </div>
+        <div class="col-9 d-inline" style="padding-left:40px;">
+          <!-- rating details section -->
+            <p>rate: {{ average_rating }}</p>
+            <p>total number of rating: {{ work_ratings_count }}</p>
+        <!-- reviews section -->
+        <section class="container border mt-5 mb-3">
+          <div class="row">
+
+            <div class="col-12">
+              <div class="row p-4">
+                <div class="col-1">
+                  <img src="../static/images/profile.png" alt="" style="width:65px; height:90px;">
+                </div>
+                <div class="col-9">
+                  <form action="/isbn/{{ isbn }}" method="post">
+                    <textarea name="comment" rows="8" cols="80" class="border-dark rounded">
+
+                    </textarea>
+                    <button type="submit" name="button" class="btn btn-dark">post</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          {% if reviews is not none %}
+            {% for review in reviews %}
+              <div class="col-12">
+
+                      <div class="row p-4">
+                        <div class="col-1">
+                          <img src="../static/images/profile.png" alt="" style="width:65px; height:90px;">
+                        </div>
+                        <div class="col-11" style="word-wrap:break-word;">
+                          <div class="p-2">
+                            <div class="pb-4"><a href="#"> <span>@{{ review.user_name }}</span> </a> <h6 class="d-inline small comment-meta">{{ review.timestamp }}</h6></div>
+                              <p>
+                                {{ review.comment }}
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

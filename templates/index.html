@@ -1,0 +1,36 @@
+{% extends "base_template.html" %}
+  {% block search_words_of_the_undead %}
+    <a class="navbar-brand js-scroll-trigger" href="{{ url_for('index') }}">
+      Words of the undead
+    </a>
+  {% endblock %}
+  {% block search_user %}
+    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('logout') }}">logout</a></li>
+  {% endblock %}
+  {% block container %}
+				<div class="container-fluid text-center"  style="background-image:url(../static/images/pngfuel_horiz.png); box-shadow: 6px 8px 10px 0px rgba(0,0,0,0.6); padding-top: 70px; background-size: cover;height:300px">
+  {% endblock %}
+  {% block container_end %}
+				  <p  style="font-size:23px; font-family:Serif; color:#cbd1d6; padding-top:30px;">
+				    “A book is made from a tree. It is an assemblage of flat, flexible parts (still called “leaves”) imprinted with dark pigmented squiggles. One glance at it and you hear the voice of another person, perhaps someone dead for thousands of years.
+				    Across the millennia, the author is speaking, clearly and silently, inside your head, directly to you. Writing is perhaps the greatest of human inventions, binding together people, citizens of distant epochs, who never knew one another. Books break the shackles of time ― proof that humans can work magic.”
+				    <br>– Carl Sagan
+				  </p>
+				</div>
+  {% endblock %}
+
+  {% block body %}
+				<div class="row">
+					{% for book in books %}
+					<div class="card col-2">
+					  <a href="http://127.0.0.1:5000/isbn/{{ book.isbn }}"><img src="https://covers.openlibrary.org/b/ISBN/{{ book.isbn }}--M.jpg" style="width:226px; height:376px" alt="Avatar"></a>
+					  <div class="card_container">
+					    <h4><p><b>{{ book.author }}</b></p></h4>
+					    <p>{{ book.title }}</p>
+
+					  </div>
+					</div>
+					{% endfor %}
+
+				</div>
+  {% endblock %}

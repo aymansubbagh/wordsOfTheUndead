@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="ayman subbagh" />
+        <title>Words Of The Undead</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/000000/open-book.png"/>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../static/css/styles.css" rel="stylesheet" />
+
+
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        {% block container %}
+        {% endblock %}
+				<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+				      <div class="container-fluid">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+				          {% block search_words_of_the_undead %}
+                  {% endblock %}
+                </ul>
+				          <div class="collapse navbar-collapse" id="navbarResponsive">
+											<ul>
+											    <form method="post" action="{{ url_for('index') }}" style="padding-top:20px;">
+														<div class="input-group">
+													    <input type="text" class="form-control" name="keyword" placeholder="Search...." style="width:1000px;">
+													    <div class="input-group-append">
+													      <button class="btn btn-secondary" type="submit">
+													        <i class="fa fa-search"></i>
+													      </button>
+													    </div>
+													  </div>
+                            <div class="text-center" style="color:black; font-size:20px">
+                              search by<label for="title" style="padding-left:10px; padding-right:10px;">title </label><input id="title" type="radio" name="cate" value="title">
+                              <label for="author" style="padding-left:10px; padding-right:10px;">author </label><input id="author" type="radio" name="cate" value="author">
+                              <label for="isbn" style="padding-left:10px; padding-right:10px;">isbn </label><input id="isbn" type="radio" name="cate" value="isbn">
+
+                            </div>
+                          </form>
+											</ul>
+				              <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        {% block search_user %}
+                        {% endblock %}
+				              </ul>
+				          </div>
+				      </div>
+				  </nav>
+          {% block container_end%}
+          {% endblock %}
+
+
+          {% block body %}
+          {% endblock %}
+
+
+
+
+
+
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container-fluid"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../static/js/scripts.js"></script>
+    </body>
+</html>
