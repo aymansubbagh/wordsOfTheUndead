@@ -21,8 +21,10 @@ SQLAlchemy
             import requests
             res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "KEY", "isbns": "9781632168146"})
             print(res.json())
-# finally
-  open cmd navigate to the folder and type these commands
-  - set FLASK_APP=application.py # Hit Enter.
-  - set FLASK_DEBUG=1 to enable debugging FLASK_DEBUG=0 to diable # Hit Enter.
-  - flask run # Hit Enter.
+    finally
+      open cmd navigate to the folder and type these commands
+      - set FLASK_APP=application.py # Hit Enter.
+      - set FLASK_DEBUG=1 to enable debugging FLASK_DEBUG=0 to diable # Hit Enter.
+      - flask run # Hit Enter.
+# Screenshots
+![signin](/static/images/signin)
