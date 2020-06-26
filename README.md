@@ -27,4 +27,4 @@ SQLAlchemy
       - set FLASK_DEBUG=1 to enable debugging FLASK_DEBUG=0 to diable # Hit Enter.
       - flask run # Hit Enter.
 # Screenshots
-![signin](static/images/signin)
+![signin](/static/images/signin.png)
