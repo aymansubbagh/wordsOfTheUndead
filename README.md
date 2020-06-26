@@ -9,7 +9,7 @@ SQLAlchemy
 
 # HOW TO USE
   in import.py file
-    1.  replace "YOUR DATABASE URI" in engine = create_engine("YOUR DATABASE URI") with your own database.
+    1.  replace "YOUR DATABASE URI" in `engine = create_engine("YOUR DATABASE URI")` with your own database.
     2.  then run the file from the cmd by typing python import.py
 
   How to get your own goodreads APIs key
@@ -18,9 +18,9 @@ SQLAlchemy
         include an application URL, callback URL, or support URL.
     3.  You should then see your API key. (For this project, we’ll care only about the “key”, not the “secret”.)
     4.  You can now use that API key to make requests to the Goodreads API, documented here. In particular, Python code like the below
-            import requests
+            `import requests
             res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "KEY", "isbns": "9781632168146"})
-            print(res.json())
+            print(res.json())`
     finally
       open cmd navigate to the folder and type these commands
       1. set FLASK_APP=application.py # Hit Enter.
