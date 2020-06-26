@@ -1,4 +1,4 @@
-# wordsOfTheUndead
+# Words Of The Undead
 A Book site review using goodreads APIs and covers.openlibrary.org
 
 # requirements:
