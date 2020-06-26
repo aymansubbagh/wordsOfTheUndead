@@ -28,3 +28,6 @@ SQLAlchemy
       - flask run # Hit Enter.
 # Screenshots
 ![signin](/static/images/signin.png)
+![register](/static/images/register.png)
+![home](/static/images/home.png)
+![book](/static/images/book.png)
