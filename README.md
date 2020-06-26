@@ -18,7 +18,7 @@ SQLAlchemy
         include an application URL, callback URL, or support URL.</br>
     3.  You should then see your API key. (For this project, we’ll care only about the “key”, not the “secret”.)</br>
     4.  You can now use that API key to make requests to the Goodreads API, documented here. In particular, Python code like the below</br>
-            import requests
+            import requests\n
             res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "KEY", "isbns": "9781632168146"})
             print(res.json())
             </br>
